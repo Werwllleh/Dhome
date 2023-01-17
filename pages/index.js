@@ -1,5 +1,6 @@
 import A from "../src/components/A";
 import MainContainer from "../src/components/MainContainer";
+import Head from "next/head";
 
 const Index = () => {
 	return (
