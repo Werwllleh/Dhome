@@ -19,8 +19,8 @@ h2,
 h3,
 h4,
 p,
-ul[class],
-ol[class],
+ul,
+ol,
 li,
 figure,
 figcaption,
@@ -35,17 +35,24 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
+  color: #132026;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  line-height: 1.7em;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
+ul,
+ol {
   list-style: none;
 }
 
 /* A elements that don't have a class get default styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
@@ -53,6 +60,11 @@ a:not([class]) {
 /* Make images easier to work with */
 img {
   max-width: 100%;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
 }
 
 /* Natural flow and rhythm in articles by default */
@@ -76,6 +88,12 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 @font-face {
