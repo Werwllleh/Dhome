@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import s from "../Navbar/Navbar.module.css";
 import A from "../../components/A";
 
 const Navbar = () => {
-  const [headColor, setHeadColor] = useState(true);
+  const [headColor, setHeadColor] = useState(false);
 
   const scrollHandler = (e) => {
-    if (
-      e.target.documentElement.scrollHeight -
-        (e.target.documentElement.scrollTop + window.innerHeight) <
-      100
-    ) {
+    if (e.target.documentElement.scrollTop > 115) {
       setHeadColor(true);
+    } else {
+      setHeadColor(false);
     }
   };
+
+  useEffect(() => {
+    document.addEventListener("scroll", scrollHandler, true);
+    return function () {
+      document.removeEventListener("scroll", scrollHandler, true);
+    };
+  }, []);
 
   return (
     <div className={headColor ? s.fixed_nav + " " + s.active : s.fixed_nav}>
