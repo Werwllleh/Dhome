@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { Anchor } from "antd";
+
 import s from "../Navbar/Navbar.module.css";
-import A from "../../components/A";
 
 const Navbar = () => {
   const [headColor, setHeadColor] = useState(false);
@@ -20,12 +22,17 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleClick = (e, link) => {
+    e.preventDefault();
+    console.log(link);
+  };
+
   return (
     <div className={headColor ? s.fixed_nav + " " + s.active : s.fixed_nav}>
       <nav className={s.navbar}>
         <div className="container">
           <div className={s.navbar_body}>
-            <a href="#" className={s.navbar_logo}>
+            <Link href="#" className={s.navbar_logo}>
               <span
                 className={
                   headColor
@@ -45,7 +52,7 @@ const Navbar = () => {
                 </svg>
               </span>
               <span className={s.navbar_logo_brand}>D’home</span>
-            </a>
+            </Link>
             <button className={s.navbar_toggler} type="button">
               <span></span>
               <span></span>
@@ -54,28 +61,28 @@ const Navbar = () => {
             <div className={s.navbar_menu}>
               <ul className={s.navbar_nav}>
                 <li className={s.nav_item}>
-                  <a className={s.nav_link} href="#click-about">
+                  <Link className={s.nav_link} href="#about">
                     О нас
-                  </a>
+                  </Link>
                 </li>
                 <li className={s.nav_item}>
-                  <a className={s.nav_link} href="#click-about">
+                  <Link className={s.nav_link} href="#projects">
                     Проекты
-                  </a>
+                  </Link>
                 </li>
                 <li className={s.nav_item}>
-                  <a className={s.nav_link} href="#click-about">
+                  <Link className={s.nav_link} href="#partners">
                     Партнеры
-                  </a>
+                  </Link>
                 </li>
                 <li className={s.nav_item}>
-                  <a className={s.nav_link} href="#click-about">
+                  <Link className={s.nav_link} href="#contacts">
                     Контакты
-                  </a>
+                  </Link>
                 </li>
                 <li className={s.nav_item + " " + s.nav_item_mobile}>
                   <div className="">
-                    <a href="#!">
+                    <Link href="#!">
                       <span className={s.link_icon + " " + s.link_icon_mobile}>
                         <svg
                           width="24"
@@ -92,8 +99,8 @@ const Navbar = () => {
                           ></path>
                         </svg>
                       </span>
-                    </a>
-                    <a href="#!">
+                    </Link>
+                    <Link href="#!">
                       <span className={s.link_icon + " " + s.link_icon_mobile}>
                         <svg
                           width="24"
@@ -108,13 +115,39 @@ const Navbar = () => {
                           ></path>
                         </svg>
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </li>
               </ul>
+              <Anchor
+                affix={false}
+                onClick={handleClick}
+                items={[
+                  {
+                    key: "about",
+                    href: "#about",
+                    title: "About",
+                  },
+                  {
+                    key: "projects",
+                    href: "#projects",
+                    title: "Projects",
+                  },
+                  {
+                    key: "partners",
+                    href: "#partners",
+                    title: "Partners",
+                  },
+                  {
+                    key: "contacts",
+                    href: "#contacts",
+                    title: "Contacts",
+                  },
+                ]}
+              />
             </div>
             <div className={s.navbar_links}>
-              <a href="#!">
+              <Link href="#!">
                 <span
                   className={
                     headColor ? s.link_icon + " " + s.active : s.link_icon
@@ -134,8 +167,8 @@ const Navbar = () => {
                     ></path>
                   </svg>
                 </span>
-              </a>
-              <a href="#!">
+              </Link>
+              <Link href="#!">
                 <span
                   className={
                     headColor ? s.link_icon + " " + s.active : s.link_icon
@@ -151,7 +184,7 @@ const Navbar = () => {
                     <path d="M23.625 12C23.625 5.57812 18.4219 0.375 12 0.375C5.57812 0.375 0.375 5.57812 0.375 12C0.375 17.8022 4.62609 22.6116 10.1836 23.4844V15.3605H7.23047V12H10.1836V9.43875C10.1836 6.52547 11.918 4.91625 14.5744 4.91625C15.8466 4.91625 17.1769 5.14313 17.1769 5.14313V8.0025H15.7106C14.2669 8.0025 13.8164 8.89875 13.8164 9.81797V12H17.0405L16.5248 15.3605H13.8164V23.4844C19.3739 22.6116 23.625 17.8022 23.625 12Z"></path>
                   </svg>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
