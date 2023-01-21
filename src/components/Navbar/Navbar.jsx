@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Anchor, Col, Row } from "antd";
 import Link from "next/link";
-import { Anchor } from "antd";
 
 import s from "../Navbar/Navbar.module.css";
 
@@ -32,7 +32,7 @@ const Navbar = () => {
       <nav className={s.navbar}>
         <div className="container">
           <div className={s.navbar_body}>
-            <Link href="#" className={s.navbar_logo}>
+            <Link href="/" className={s.navbar_logo}>
               <span
                 className={
                   headColor
@@ -68,6 +68,11 @@ const Navbar = () => {
                 <li className={s.nav_item}>
                   <Link className={s.nav_link} href="#projects">
                     Проекты
+                  </Link>
+                </li>
+                <li className={s.nav_item}>
+                  <Link className={s.nav_link} href="#advantages">
+                    Преимущества
                   </Link>
                 </li>
                 <li className={s.nav_item}>
@@ -119,32 +124,6 @@ const Navbar = () => {
                   </div>
                 </li>
               </ul>
-              <Anchor
-                affix={false}
-                onClick={handleClick}
-                items={[
-                  {
-                    key: "about",
-                    href: "#about",
-                    title: "About",
-                  },
-                  {
-                    key: "projects",
-                    href: "#projects",
-                    title: "Projects",
-                  },
-                  {
-                    key: "partners",
-                    href: "#partners",
-                    title: "Partners",
-                  },
-                  {
-                    key: "contacts",
-                    href: "#contacts",
-                    title: "Contacts",
-                  },
-                ]}
-              />
             </div>
             <div className={s.navbar_links}>
               <Link href="#!">
