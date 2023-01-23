@@ -12,8 +12,8 @@ import p5 from "../../../images/patners/partn5.png";
 const Partners = () => {
   return (
     <div id="partners">
-      <div className={s.body}>
-        <div className="container">
+      <div className="container">
+        <div className={s.body}>
           <div className={s.textBlock}>
             <h2 className={s.title}>Наши партнеры</h2>
             <div className={s.partners}>
