@@ -8,12 +8,13 @@ const Navbar = () => {
   const [headColor, setHeadColor] = useState(false);
 
   const scrollHandler = (e) => {
-    if (e.target.documentElement.scrollTop > 115) {
+    if (e.currentTarget.documentElement?.scrollTop > 115) {
       setHeadColor(true);
     } else {
       setHeadColor(false);
     }
   };
+
 
   useEffect(() => {
     document.addEventListener("scroll", scrollHandler, true);

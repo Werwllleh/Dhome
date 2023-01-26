@@ -1,0 +1,106 @@
+.form_body {
+  flex: 0 1 47%;
+  padding: 4rem 5.3rem;
+  background-color: #132026;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_title {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0 0 1rem 0;
+}
+
+.form > label {
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.25rem 0;
+}
+
+.field {
+  position: relative;
+  margin: 0 0 1rem 0;
+}
+
+.field img {
+  position: absolute;
+  left: 2%;
+  top: 25%;
+  pointer-events: none;
+}
+
+.input_user,
+.input_email,
+.form textarea {
+  position: relative;
+  height: initial;
+  align-items: center;
+  padding: 0 15px 0 40px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: transparent;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.emailBlock {
+  position: relative;
+}
+
+.validateEmail {
+  display: none;
+}
+
+.validateEmail.error {
+  position: absolute;
+  margin: 0.4rem 0 0 0;
+  display: block;
+  color: #ffc94b;
+  font-weight: 600;
+}
+
+.form textarea {
+  resize: none;
+  margin: 1.5rem 0 2rem 0;
+  height: 170px;
+  padding: 15px;
+}
+
+.form textarea::-webkit-scrollbar {
+  width: 6px; /* width of the entire scrollbar */
+}
+
+.form textarea::-webkit-scrollbar-track {
+  background: #132026; /* color of the tracking area */
+}
+
+.form textarea::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: 5px;
+  /*roundnessofthescrollthumb*/
+  border: 3px solid #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.form_title span {
+  color: #ffc94b;
+}
+
+.form_btn {
+  background-color: #ffc94b;
+  color: inherit;
+  padding: 17px 45px;
+  border-radius: 5px;
+  font-weight: 600;
+}
