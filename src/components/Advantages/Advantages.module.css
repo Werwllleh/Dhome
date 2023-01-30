@@ -1,0 +1,139 @@
+.section_advantages {
+  background-color: #132026;
+}
+.body {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.body::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  right: 1%;
+  top: -2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffc94b;
+  background-image: url("./../../../images/icons/house.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.left {
+  position: relative;
+  flex: 0 0 45%;
+  padding: 6rem 2rem;
+}
+
+.left::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: #ffc94b;
+  right: 2%;
+  top: 0;
+}
+
+.left p {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 0 1rem 0;
+}
+.left h2 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 48px;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+.left h2 span {
+  color: #ffc94b;
+}
+
+.text {
+  font-size: 18px !important;
+  line-height: 2;
+  opacity: 0.5;
+  transition: 0.5s;
+  margin: 0 !important;
+}
+
+.right {
+}
+
+.advantages_items {
+  display: flex;
+}
+
+.item {
+  padding: 1rem;
+}
+
+.icon {
+  pointer-events: none;
+  margin: 0 0 1rem 0;
+}
+
+.name {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 0 0.7rem 0;
+}
+
+.descpription {
+  color: #fff;
+  font-size: 14px;
+  line-height: 2;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 1150px) {
+  .left p {
+    font-size: 18px;
+  }
+  .left h2 {
+    font-size: 36px;
+  }
+  .text {
+    font-size: 16px !important;
+    line-height: 1.5;
+  }
+  .advantages_items {
+    flex-direction: column;
+  }
+  .left {
+    flex: 0 0 50%;
+    padding: 11rem 1rem;
+  }
+  .item {
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .body {
+    flex-direction: column;
+    padding: 1rem 0 2rem 0;
+  }
+  .left {
+    flex: 0 0 50%;
+    padding: 2rem 0.5rem;
+  }
+  .left::after {
+    display: none;
+  }
+  .icon {
+    margin: 0;
+  }
+  .name {
+    margin: 0 0 0.2rem 0;
+  }
+}

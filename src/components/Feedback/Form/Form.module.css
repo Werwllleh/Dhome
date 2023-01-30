@@ -1,6 +1,6 @@
 .form_body {
   flex: 0 0 47%;
-  padding: 4rem 5.3rem;
+  padding: 3.5rem 5.3rem;
   background-color: #132026;
 }
 
@@ -70,7 +70,7 @@
 .form textarea {
   resize: none;
   margin: 1.5rem 0 2rem 0;
-  height: 170px;
+  height: 130px;
   padding: 15px;
 }
 

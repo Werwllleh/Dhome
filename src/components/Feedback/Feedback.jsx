@@ -2,39 +2,56 @@ import React from "react";
 import { Carousel } from "antd";
 import s from "../Feedback/Feedback.module.css";
 import Form from "./Form/Form";
+import Image from "next/image";
+import slide1 from "./../../../images/feedback_slider/slide.jpg";
 
-const contentStyle = {
-  /* height: "160px",
-  color: "#000",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#364d79", */
-};
+const slides = [
+  {
+    imageSrc: slide1,
+    alt: "",
+  },
+  {
+    imageSrc: slide1,
+    alt: "",
+  },
+  {
+    imageSrc: slide1,
+    alt: "",
+  },
+  {
+    imageSrc: slide1,
+    alt: "",
+  },
+];
 
-const sliderStyle = {
-  width: "700px",
+const settings = {
+  slidesToShow: 1,
+  infinite: true,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  speed: 800,
+  pauseOnHover: true,
+  dots: true,
 };
 
 const Feedback = () => {
   return (
-    <div id="feedback">
+    <div style={{ display: "none" }} id="feedback">
       <div className="container">
         <div className={s.body}>
           <Form />
-          <div style={sliderStyle}>
-            <Carousel autoplay>
-              <div>
-                <h3 style={contentStyle}>DDDD</h3>
-              </div>
-              <div>
-                <h3 style={contentStyle}>ewfwefwewef</h3>
-              </div>
-              <div>
-                <h3 style={contentStyle}>3</h3>
-              </div>
-              <div>
-                <h3 style={contentStyle}>4</h3>
-              </div>
+          <div className={s.slider_feedback}>
+            <Carousel {...settings}>
+              {slides.map((slide, index) => (
+                <div key={index} className={s.feedBackSlide}>
+                  <Image
+                    className={s.__img}
+                    src={slide.imageSrc}
+                    alt={slide.alt}
+                  />
+                </div>
+              ))}
             </Carousel>
           </div>
         </div>

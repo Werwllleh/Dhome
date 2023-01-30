@@ -2,8 +2,8 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import s from "../Form/Form.module.css";
 
-import iUser from "../../../images/icons/icon_user.png";
-import iEmail from "../../../images/icons/icon_email.png";
+import iUser from "/images/icons/icon_user.png";
+import iEmail from "/images/icons/icon_email.png";
 
 const Form = () => {
   const [name, setName] = useState("");

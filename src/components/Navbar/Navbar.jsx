@@ -15,7 +15,6 @@ const Navbar = () => {
     }
   };
 
-
   useEffect(() => {
     document.addEventListener("scroll", scrollHandler, true);
     return function () {
@@ -54,11 +53,11 @@ const Navbar = () => {
               </span>
               <span className={s.navbar_logo_brand}>D’home</span>
             </Link>
-            <button className={s.navbar_toggler} type="button">
+            <div className={s.navbar_toggler}>
               <span></span>
               <span></span>
               <span></span>
-            </button>
+            </div>
             <div className={s.navbar_menu}>
               <ul className={s.navbar_nav}>
                 <li className={s.nav_item}>

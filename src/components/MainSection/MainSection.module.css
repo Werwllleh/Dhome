@@ -7,7 +7,6 @@
 .mainsec_img {
   position: absolute;
   height: 100%;
-  width: 456px;
   right: 0;
   top: 0;
 }
@@ -16,7 +15,7 @@
   margin: 100px 0 0 0;
   text-align: left;
   padding: 0 15px;
-  max-width: 950px;
+  max-width: 600px;
   width: 100%;
 }
 
@@ -48,4 +47,31 @@
 .btn_main:hover {
   color: #131f25;
   background-color: #ffc94b;
+}
+
+@media screen and (max-width: 1150px) {
+  .textBlock {
+    max-width: 450px;
+  }
+  .title {
+    font-size: 36px;
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mainsec_img {
+    display: none;
+  }
+  .textBlock {
+    margin: 50px 0 0 0;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 30px;
+  }
 }

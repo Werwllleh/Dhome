@@ -132,6 +132,20 @@ select {
   padding: 0 10px;
 }
 
+@media screen and (max-width: 1350px) {
+  .container {
+    max-width: 92%;
+  }
+}
+
+/* .slick-dots li {
+  background-color: #ffc94b !important;
+}
+
+.slick-active button {
+  background-color: #132026 !important;
+}
+ */
 @font-face {
   font-family: "Poppins";
   src: local("Poppins Light"), local("Poppins-Light"),

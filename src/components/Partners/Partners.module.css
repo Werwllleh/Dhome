@@ -12,13 +12,20 @@
   margin: 0 0 3rem 0;
 }
 
-.partners {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.partners img {
+  pointer-events: none;
 }
 
-.partners img {
-  margin: 0 2rem;
+.partSlide {
+  display: flex !important;
+  justify-content: center !important;
+  padding: 0 1rem !important;
+  height: 100px !important;
+  align-items: center !important;
+}
+
+@media screen and (max-width: 768px) {
+  .body {
+    padding: 40px 0;
+  }
 }
