@@ -93,4 +93,6 @@
   color: #ffc94b;
   font-weight: 600;
   font-size: 18px;
+  opacity: 0.5;
+  transition: 0.5s;
 }
