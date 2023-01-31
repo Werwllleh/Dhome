@@ -137,3 +137,9 @@
     margin: 0 0 0.2rem 0;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .left h2 {
+    font-size: 24px;
+  }
+}

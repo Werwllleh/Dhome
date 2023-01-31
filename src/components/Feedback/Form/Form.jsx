@@ -44,7 +44,8 @@ const Form = () => {
     <div className={s.form_body}>
       <form className={s.form} action="" method="post" onSubmit={handleSubmit}>
         <p className={s.form_title}>
-          Расскажи нам о своем <span>доме мечты</span>
+          Расскажи нам о своем <br />
+          <span>доме мечты</span>
         </p>
         <label>Ваше имя</label>
         <div className={s.field}>
