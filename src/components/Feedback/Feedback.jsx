@@ -33,23 +33,8 @@ const settings = {
   autoplay: true,
   autoplaySpeed: 4000,
   speed: 800,
-  dots: true,
+  dots: false,
   fade: true,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        dots: true,
-      },
-    },
-  ],
-  appendDots: (dots) => (
-    <div>
-      <ul className={s.feedbackDots}> {dots} </ul>
-    </div>
-  ),
 };
 
 const Feedback = () => {

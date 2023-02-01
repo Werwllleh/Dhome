@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import s from "../Projects/Projects.module.css";
 import { Carousel } from "antd";
 import Image from "next/image";
@@ -17,25 +17,46 @@ import home8 from "./../../../images/projects/8/image8.jpeg";
 
 const settings = {
   className: "partner_item",
-  slidesToShow: 4,
+  slidesToShow: 5,
   infinite: true,
   slidesToScroll: 3,
+  swipeToSlide: true,
+  swipe: true,
   autoplay: true,
   autoplaySpeed: 4000,
   speed: 800,
   pauseOnHover: true,
+  pauseOnFocus: true,
   dots: false,
+  initialSlide: 0,
+  touchThreshold: 8000,
   responsive: [
     {
-      breakpoint: 768,
+      breakpoint: 1700,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
+        slidesToShow: 4,
+        slidesToScroll: 4,
         dots: true,
       },
     },
     {
-      breakpoint: 480,
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 930,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 620,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -43,6 +64,11 @@ const settings = {
       },
     },
   ],
+  appendDots: (dots) => (
+    <div>
+      <ul className={s.projectsDots}> {dots} </ul>
+    </div>
+  ),
 };
 
 const houses = [
@@ -121,6 +147,16 @@ const houses = [
 ];
 
 const Projects = () => {
+  const sliderRef = useRef();
+
+  const goNext = () => {
+    sliderRef?.current?.next();
+  };
+
+  const goPrev = () => {
+    sliderRef?.current?.prev();
+  };
+
   return (
     <div className={s.projects} id="projects">
       <div className="container">
@@ -137,55 +173,82 @@ const Projects = () => {
                 дома.
               </p>
             </div>
-            <div className={s.head_arrows}></div>
+            <div className={s.arrows}>
+              <button
+                className={s.arrow + " " + s.prev}
+                type={"text"}
+                onClick={goPrev}
+              >
+                <svg
+                  width="38"
+                  height="38"
+                  viewBox="0 0 38 38"
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M21.0201 27.9171L12.1029 19L21.0201 10.0828L23.2295 12.2921L16.5217 19L23.2295 25.7078L21.0201 27.9171Z"></path>
+                </svg>
+              </button>
+              <button
+                className={s.arrow + " " + s.next}
+                type={"text"}
+                onClick={goNext}
+              >
+                <svg
+                  width="38"
+                  height="38"
+                  viewBox="0 0 38 38"
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M16.9799 27.9171L25.8971 19L16.9799 10.0828L14.7705 12.2921L21.4783 19L14.7705 25.7078L16.9799 27.9171Z"></path>
+                </svg>
+              </button>
+            </div>
           </div>
           <div className={s.project_slider}>
-            {houses.map((home, index) => (
-              <div className={s.project_slide}>
-                <Link key={index} target={"_blank"} href={home.href}>
-                  <Image
-                    className={s.home_img}
-                    src={home.imageSrc}
-                    alt={home.title}
-                  />
-                </Link>
-                <div className={s.textBlock}>
-                  <div className={s.home_title}>{home.title}</div>
-                  <div className={s.home_place}>
-                    <Image
-                      className={s.home_place_icon}
-                      src={placeIcon}
-                      alt={"place icon"}
-                    />
-                    <p>{home.place}</p>
-                  </div>
-                  <div className={s.home_square}>
-                    {"S = " + home.square}
-                    <sup>2</sup>
-                  </div>
-                </div>
-                <div className={s.priceBlock}>
-                  <div className={s.home_price}>
-                    <span>₽ </span>
-                    {home.price}
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {/* <Carousel {...settings}>
+            <Carousel ref={sliderRef} {...settings}>
               {houses.map((home, index) => (
-                <div className={s.partSlide}>
+                <div className={s.project_slide}>
                   <Link key={index} target={"_blank"} href={home.href}>
                     <Image
-                      className={s.partner_img}
+                      className={s.home_img}
                       src={home.imageSrc}
-                      alt={home.alt}
+                      alt={home.title}
                     />
                   </Link>
+                  <div className={s.textBlock}>
+                    <div>
+                      <div className={s.home_title}>{home.title}</div>
+                      <div className={s.home_place}>
+                        <Image
+                          className={s.home_place_icon}
+                          src={placeIcon}
+                          alt={"place icon"}
+                        />
+                        <p>{home.place}</p>
+                      </div>
+                    </div>
+                    <div className={s.home_square}>
+                      {"S = " + home.square}
+                      <sup>2</sup>
+                    </div>
+                  </div>
+                  <div className={s.priceBlock}>
+                    <div className={s.home_price}>
+                      <p>Стоимость:</p>
+                      <p>{"₽" + " " + home.price}</p>
+                    </div>
+                    <button
+                      className={"btn" + " " + s.home_buy_btn}
+                      type={"text"}
+                    >
+                      Заказать
+                    </button>
+                  </div>
                 </div>
               ))}
-            </Carousel> */}
+            </Carousel>
           </div>
         </div>
       </div>

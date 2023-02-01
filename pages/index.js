@@ -17,17 +17,6 @@ const Index = () => {
 			<Advantages />
 			<Feedback />
 			<Projects />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
 		</>
 	);
 }
