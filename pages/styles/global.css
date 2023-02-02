@@ -117,6 +117,18 @@ select {
   box-shadow: 0 15px 30px rgb(255 201 75 / 50%) !important;
 }
 
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #132026;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #ffffff;
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {

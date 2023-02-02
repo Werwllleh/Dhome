@@ -74,4 +74,7 @@
   .title {
     font-size: 28px;
   }
+  .textBlock {
+    padding: 0;
+  }
 }

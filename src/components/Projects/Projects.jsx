@@ -50,6 +50,7 @@ const settings = {
     {
       breakpoint: 930,
       settings: {
+        rows: 2,
         slidesToShow: 2,
         slidesToScroll: 2,
         dots: true,

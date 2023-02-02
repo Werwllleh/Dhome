@@ -186,6 +186,9 @@
 
 @media screen and (max-width: 930px) {
   .project_slide {
+    margin: 15px auto !important;
+  }
+  .project_slide {
     max-width: 400px;
   }
 }
