@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Anchor, Col, Row } from "antd";
 import Link from "next/link";
+import { menuItems } from "./NavItem/menuItems";
 
 import s from "../Navbar/Navbar.module.css";
+import NavItem from "./NavItem/NavItem";
 
-const Navbar = () => {
+const Navbar = ({ setelement }) => {
   const [headColor, setHeadColor] = useState(false);
   const [isActiveToggler, setIsActiveToggler] = useState(false);
 
@@ -33,7 +34,7 @@ const Navbar = () => {
       <nav className={s.navbar}>
         <div className="container">
           <div className={s.navbar_body}>
-            <Link href="/" className={s.navbar_logo}>
+            <Link href="#" className={s.navbar_logo}>
               <span
                 className={
                   headColor
@@ -69,31 +70,11 @@ const Navbar = () => {
             </button>
             <div className={s.navbar_menu}>
               <ul className={s.navbar_nav}>
-                <li className={s.nav_item}>
-                  <Link className={s.nav_link} href="#about">
-                    О нас
-                  </Link>
-                </li>
-                <li className={s.nav_item}>
-                  <Link className={s.nav_link} href="#projects">
-                    Проекты
-                  </Link>
-                </li>
-                <li className={s.nav_item}>
-                  <Link className={s.nav_link} href="#advantages">
-                    Преимущества
-                  </Link>
-                </li>
-                <li className={s.nav_item}>
-                  <Link className={s.nav_link} href="#partners">
-                    Партнеры
-                  </Link>
-                </li>
-                <li className={s.nav_item}>
-                  <Link className={s.nav_link} href="#contacts">
-                    Контакты
-                  </Link>
-                </li>
+                {menuItems.map((item, i) => {
+                  return (
+                    <NavItem key={i} href={item.href} title={item.title} />
+                  );
+                })}
               </ul>
             </div>
             <div className={s.navbar_links}>
@@ -145,31 +126,9 @@ const Navbar = () => {
             }
           >
             <ul className={s.navbar_nav}>
-              <li className={s.nav_item}>
-                <Link className={s.nav_link} href="#about">
-                  О нас
-                </Link>
-              </li>
-              <li className={s.nav_item}>
-                <Link className={s.nav_link} href="#projects">
-                  Проекты
-                </Link>
-              </li>
-              <li className={s.nav_item}>
-                <Link className={s.nav_link} href="#advantages">
-                  Преимущества
-                </Link>
-              </li>
-              <li className={s.nav_item}>
-                <Link className={s.nav_link} href="#partners">
-                  Партнеры
-                </Link>
-              </li>
-              <li className={s.nav_item}>
-                <Link className={s.nav_link} href="#contacts">
-                  Контакты
-                </Link>
-              </li>
+              {menuItems.map((item, i) => {
+                return <NavItem key={i} href={item.href} title={item.title} />;
+              })}
               <li className={s.nav_item_mobile}>
                 <Link href="#!">
                   <span className={s.link_icon_mobile}>

@@ -191,6 +191,9 @@
   .project_slide {
     max-width: 400px;
   }
+  .home_img {
+    height: 190px;
+  }
 }
 
 @media screen and (max-width: 845px) {
@@ -213,9 +216,6 @@
 @media screen and (max-width: 670px) {
   .head_text h2 {
     font-size: 32px;
-  }
-  .home_img {
-    height: 190px;
   }
   .project_slide {
     max-width: 300px;

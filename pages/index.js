@@ -1,3 +1,5 @@
+import React from "react";
+
 import Navbar from "../src/components/Navbar/Navbar";
 import MainSection from "../src/components/MainSection/MainSection";
 import Partners from "../src/components/Partners/Partners";
@@ -8,15 +10,16 @@ import Advantages from "../src/components/Advantages/Advantages";
 
 
 const Index = () => {
+
 	return (
 		<>
 			<Navbar />
 			<MainSection />
-			<Partners />
 			<About />
 			<Advantages />
-			<Feedback />
 			<Projects />
+			<Feedback />
+			<Partners />
 		</>
 	);
 }

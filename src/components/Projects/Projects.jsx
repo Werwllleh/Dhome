@@ -19,7 +19,7 @@ const settings = {
   className: "partner_item",
   slidesToShow: 5,
   infinite: true,
-  slidesToScroll: 3,
+  slidesToScroll: 5,
   swipeToSlide: true,
   swipe: true,
   autoplay: true,
