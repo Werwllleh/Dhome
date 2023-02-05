@@ -7,6 +7,7 @@ import About from "../src/components/About/About";
 import Feedback from "../src/components/Feedback/Feedback";
 import Projects from "../src/components/Projects/Projects";
 import Advantages from "../src/components/Advantages/Advantages";
+import Footer from "../src/components/Footer/Footer";
 
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
 			<Projects />
 			<Feedback />
 			<Partners />
+			<Footer />
 		</>
 	);
 }

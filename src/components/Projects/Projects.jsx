@@ -210,8 +210,8 @@ const Projects = () => {
           <div className={s.project_slider}>
             <Carousel ref={sliderRef} {...settings}>
               {houses.map((home, index) => (
-                <div className={s.project_slide}>
-                  <Link key={index} target={"_blank"} href={home.href}>
+                <div key={index} className={s.project_slide}>
+                  <Link target={"_blank"} href={home.href}>
                     <Image
                       className={s.home_img}
                       src={home.imageSrc}

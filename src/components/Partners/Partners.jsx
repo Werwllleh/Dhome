@@ -74,15 +74,15 @@ const settings = {
 const Partners = () => {
   return (
     <div id="partners">
-      <div className="container">
-        <div className={s.body}>
+      <div className={s.body}>
+        <div className="container">
           <div className={s.textBlock}>
             <h2 className={s.title}>Наши партнеры</h2>
             <div className={s.partners}>
               <Carousel {...settings}>
                 {partners.map((partner, index) => (
-                  <div className={s.partSlide}>
-                    <Link key={index} target={"_blank"} href={partner.href}>
+                  <div key={index} className={s.partSlide}>
+                    <Link target={"_blank"} href={partner.href}>
                       <Image
                         className={s.partner_img}
                         src={partner.imageSrc}

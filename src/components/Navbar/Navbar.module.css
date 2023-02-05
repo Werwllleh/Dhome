@@ -46,6 +46,8 @@
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
+  outline: none;
+  background-color: transparent;
 }
 
 .navbar_toggler span {
@@ -74,7 +76,7 @@
   width: 30px;
   background: none;
   border: none;
-  outline-style: none;
+  outline: none;
   margin: 20px 0 0 0;
 }
 
@@ -186,8 +188,6 @@
 .link_icon.active svg {
   fill: #fff;
 }
-
-
 
 @media screen and (max-width: 1200px) {
 }
