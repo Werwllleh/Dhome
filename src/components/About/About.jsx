@@ -3,7 +3,7 @@ import s from "../About/About.module.css";
 
 const About = () => {
   return (
-    <div id="about">
+    <div id="about" style={{ display: "none" }}>
       <div>ABOUT</div>
     </div>
   );
