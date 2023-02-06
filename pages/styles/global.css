@@ -113,6 +113,12 @@ select {
     border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+.body-block {
+  height: 100%;
+  overflow: hidden;
+
+}
+
 .btn:hover {
   box-shadow: 0 15px 30px rgb(255 201 75 / 50%) !important;
 }

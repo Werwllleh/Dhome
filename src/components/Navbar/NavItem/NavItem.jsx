@@ -1,13 +1,16 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
-import { menuItems } from "../NavItem/menuItems";
 
 import s from "../NavItem/NavItem.module.css";
 
-const NavItem = ({ href, title }) => {
+const NavItem = ({ toggleClick, href, title }) => {
+  const handleClickItemMenu = () => {
+    toggleClick((current) => !current);
+  };
+
   return (
     <li className={s.nav_item}>
-      <Link className={s.nav_link} href={href}>
+      <Link onClick={handleClickItemMenu} className={s.nav_link} href={href}>
         {title}
       </Link>
     </li>

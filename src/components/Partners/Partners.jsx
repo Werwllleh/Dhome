@@ -24,21 +24,6 @@ const partners = [
     imageSrc: timerline,
     alt: "Тимерлайн",
   },
-  {
-    href: "https://xn----7sbhqqjkgebi5npb.xn--p1ai/",
-    imageSrc: okna,
-    alt: "Окна поволжья",
-  },
-  {
-    href: "https://www.ctep.ru/",
-    imageSrc: chzsp,
-    alt: "Чебоксарский завод строительных профилей",
-  },
-  {
-    href: "https://xn--80ajigieluo.xn--p1ai/",
-    imageSrc: timerline,
-    alt: "Тимерлайн",
-  },
 ];
 
 const settings = {
@@ -51,6 +36,11 @@ const settings = {
   speed: 800,
   pauseOnHover: true,
   dots: false,
+  appendDots: (dots) => (
+    <div>
+      <ul className={s.partnersDots}> {dots} </ul>
+    </div>
+  ),
   responsive: [
     {
       breakpoint: 768,

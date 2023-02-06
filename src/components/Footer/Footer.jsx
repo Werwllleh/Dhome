@@ -36,13 +36,13 @@ const Footer = () => {
             </div>
             <div className={s.contact_links}>
               <div className={s.item}>
-                <Image className={s.contact_icon} src={phone} />
+                <Image className={s.contact_icon} src={phone} alt={""} />
                 <Link className={s.contact_link} href={"tel:+79991115533"}>
                   +79991115533
                 </Link>
               </div>
               <div className={s.item}>
-                <Image className={s.contact_icon} src={mail} />
+                <Image className={s.contact_icon} src={mail} alt={""} />
                 <Link
                   className={s.contact_link}
                   href={"mailto:example@info.ru"}

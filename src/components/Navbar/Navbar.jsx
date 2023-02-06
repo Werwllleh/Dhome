@@ -5,7 +5,7 @@ import { menuItems } from "./NavItem/menuItems";
 import s from "../Navbar/Navbar.module.css";
 import NavItem from "./NavItem/NavItem";
 
-const Navbar = ({ setelement }) => {
+const Navbar = ({}) => {
   const [headColor, setHeadColor] = useState(false);
   const [isActiveToggler, setIsActiveToggler] = useState(false);
 
@@ -21,6 +21,16 @@ const Navbar = ({ setelement }) => {
       setHeadColor(false);
     }
   };
+
+  useEffect(() => {
+    let body = document.querySelector("body");
+
+    if (isActiveToggler) {
+      body.classList.toggle("body-block");
+    } else {
+      body.classList.remove("body-block");
+    }
+  }, [isActiveToggler]);
 
   useEffect(() => {
     document.addEventListener("scroll", scrollHandler, true);
@@ -127,7 +137,14 @@ const Navbar = ({ setelement }) => {
           >
             <ul className={s.navbar_nav}>
               {menuItems.map((item, i) => {
-                return <NavItem key={i} href={item.href} title={item.title} />;
+                return (
+                  <NavItem
+                    toggleClick={setIsActiveToggler}
+                    key={i}
+                    href={item.href}
+                    title={item.title}
+                  />
+                );
               })}
               <li className={s.nav_item_mobile}>
                 <Link href="#!">

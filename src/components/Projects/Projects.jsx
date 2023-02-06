@@ -174,37 +174,45 @@ const Projects = () => {
                 дома.
               </p>
             </div>
-            <div className={s.arrows}>
+            <div className={s.head_btns}>
               <button
-                className={s.arrow + " " + s.prev}
-                type={"text"}
-                onClick={goPrev}
+                type="button"
+                className={"btn" + " " + s.btn_all_projects}
               >
-                <svg
-                  width="38"
-                  height="38"
-                  viewBox="0 0 38 38"
-                  fill="white"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M21.0201 27.9171L12.1029 19L21.0201 10.0828L23.2295 12.2921L16.5217 19L23.2295 25.7078L21.0201 27.9171Z"></path>
-                </svg>
+                Все объекты
               </button>
-              <button
-                className={s.arrow + " " + s.next}
-                type={"text"}
-                onClick={goNext}
-              >
-                <svg
-                  width="38"
-                  height="38"
-                  viewBox="0 0 38 38"
-                  fill="white"
-                  xmlns="http://www.w3.org/2000/svg"
+              <div className={s.arrows}>
+                <button
+                  className={s.arrow + " " + s.prev}
+                  type={"text"}
+                  onClick={goPrev}
                 >
-                  <path d="M16.9799 27.9171L25.8971 19L16.9799 10.0828L14.7705 12.2921L21.4783 19L14.7705 25.7078L16.9799 27.9171Z"></path>
-                </svg>
-              </button>
+                  <svg
+                    width="38"
+                    height="38"
+                    viewBox="0 0 38 38"
+                    fill="white"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M21.0201 27.9171L12.1029 19L21.0201 10.0828L23.2295 12.2921L16.5217 19L23.2295 25.7078L21.0201 27.9171Z"></path>
+                  </svg>
+                </button>
+                <button
+                  className={s.arrow + " " + s.next}
+                  type={"text"}
+                  onClick={goNext}
+                >
+                  <svg
+                    width="38"
+                    height="38"
+                    viewBox="0 0 38 38"
+                    fill="white"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M16.9799 27.9171L25.8971 19L16.9799 10.0828L14.7705 12.2921L21.4783 19L14.7705 25.7078L16.9799 27.9171Z"></path>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
           <div className={s.project_slider}>
@@ -242,7 +250,7 @@ const Projects = () => {
                     </div>
                     <button
                       className={"btn" + " " + s.home_buy_btn}
-                      type={"text"}
+                      type="button"
                     >
                       Заказать
                     </button>
