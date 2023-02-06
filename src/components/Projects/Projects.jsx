@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import s from "../Projects/Projects.module.css";
 import { Carousel } from "antd";
 import Image from "next/image";
@@ -14,6 +14,7 @@ import home5 from "./../../../images/projects/5/image5.jpeg";
 import home6 from "./../../../images/projects/6/image6.jpeg";
 import home7 from "./../../../images/projects/7/image7.jpeg";
 import home8 from "./../../../images/projects/8/image8.jpeg";
+import ModalReq from "../Modal/ModalReq";
 
 const settings = {
   className: "partner_item",
@@ -76,7 +77,7 @@ const houses = [
   {
     href: "#",
     imageSrc: home1,
-    title: "Архангельское-3",
+    title: "Архангельское-1",
     place: "г. Ульяновск",
     price: 2500,
     square: 300,
@@ -85,7 +86,7 @@ const houses = [
   {
     href: "#",
     imageSrc: home2,
-    title: "Архангельское-3",
+    title: "Архангельское-2",
     place: "г. Ульяновск",
     price: 2500,
     square: 300,
@@ -103,7 +104,7 @@ const houses = [
   {
     href: "#",
     imageSrc: home4,
-    title: "Архангельское-3",
+    title: "Архангельское-4",
     place: "г. Ульяновск",
     price: 2500,
     square: 300,
@@ -112,7 +113,7 @@ const houses = [
   {
     href: "#",
     imageSrc: home5,
-    title: "Архангельское-3",
+    title: "Архангельское-5",
     place: "г. Ульяновск",
     price: 2500,
     square: 300,
@@ -121,7 +122,7 @@ const houses = [
   {
     href: "#",
     imageSrc: home6,
-    title: "Архангельское-3",
+    title: "Архангельское-6",
     place: "г. Ульяновск",
     price: 2500,
     square: 300,
@@ -130,7 +131,7 @@ const houses = [
   {
     href: "#",
     imageSrc: home7,
-    title: "Архангельское-3",
+    title: "Архангельское-7",
     place: "г. Ульяновск",
     price: 2500,
     square: 300,
@@ -139,7 +140,7 @@ const houses = [
   {
     href: "#",
     imageSrc: home8,
-    title: "Архангельское-3",
+    title: "Архангельское-8",
     place: "г. Ульяновск",
     price: 2500,
     square: 300,
@@ -149,13 +150,19 @@ const houses = [
 
 const Projects = () => {
   const sliderRef = useRef();
-
+  const [openModal, setopenModal] = useState(false);
+  const [modaldata, setmodaldata] = useState("");
   const goNext = () => {
     sliderRef?.current?.next();
   };
 
   const goPrev = () => {
     sliderRef?.current?.prev();
+  };
+
+  const om = (data) => {
+    setopenModal(!openModal);
+    setmodaldata(data);
   };
 
   return (
@@ -249,6 +256,8 @@ const Projects = () => {
                       <p>{"₽" + " " + home.price}</p>
                     </div>
                     <button
+                      onClick={() => om(home.title)}
+                      datatitle={home.title}
                       className={"btn" + " " + s.home_buy_btn}
                       type="button"
                     >
@@ -261,6 +270,11 @@ const Projects = () => {
           </div>
         </div>
       </div>
+      <ModalReq
+        openModal={openModal}
+        setopenModal={setopenModal}
+        modaldata={modaldata}
+      />
     </div>
   );
 };

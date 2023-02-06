@@ -8,6 +8,7 @@ import Feedback from "../src/components/Feedback/Feedback";
 import Projects from "../src/components/Projects/Projects";
 import Advantages from "../src/components/Advantages/Advantages";
 import Footer from "../src/components/Footer/Footer";
+import ModalReq from "../src/components/Modal/ModalReq";
 
 
 const Index = () => {
@@ -22,6 +23,7 @@ const Index = () => {
 			<Feedback />
 			<Partners />
 			<Footer />
+			<ModalReq />
 		</>
 	);
 }
