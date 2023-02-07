@@ -80,7 +80,7 @@ const ModalReq = ({ openModal, modaldata, setopenModal }) => {
           <h3 className={s.title}>
             {send ? "Заявка отправлена ✅" : "Заявка"}
           </h3>
-          <div className={s.field}></div>
+          <div className={s.field}>
             <label>Объект</label>
             <input
               className={s.input}
