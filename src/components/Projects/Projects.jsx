@@ -23,7 +23,7 @@ const settings = {
   slidesToScroll: 5,
   swipeToSlide: true,
   swipe: true,
-  autoplay: true,
+  autoplay: false,
   autoplaySpeed: 4000,
   speed: 800,
   pauseOnHover: true,
