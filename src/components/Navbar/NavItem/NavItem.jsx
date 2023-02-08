@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-
 import s from "../NavItem/NavItem.module.css";
 
 const NavItem = ({ toggleClick, href, title }) => {

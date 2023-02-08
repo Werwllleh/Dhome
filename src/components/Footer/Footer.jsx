@@ -3,9 +3,6 @@ import Link from "next/link";
 import React from "react";
 import s from "../Footer/Footer.module.css";
 
-import phone from "../../../images/icons/phone.png";
-import mail from "../../../images/icons/icon_email.png";
-
 const Footer = () => {
   return (
     <div id="contacts" className={s.body}>
@@ -36,13 +33,21 @@ const Footer = () => {
             </div>
             <div className={s.contact_links}>
               <div className={s.item}>
-                <Image className={s.contact_icon} src={phone} alt={""} />
+                <img
+                  className={s.contact_icon}
+                  src={"/images/icons/phone.png"}
+                  alt={""}
+                />
                 <Link className={s.contact_link} href={"tel:+79991115533"}>
                   +79991115533
                 </Link>
               </div>
               <div className={s.item}>
-                <Image className={s.contact_icon} src={mail} alt={""} />
+                <img
+                  className={s.contact_icon}
+                  src={"/images/icons/icon_email.png"}
+                  alt={""}
+                />
                 <Link
                   className={s.contact_link}
                   href={"mailto:example@info.ru"}

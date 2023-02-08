@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Modal } from "antd";
 import s from "../Modal/ModalReq.module.css";
 
-const ModalReq = ({ openModal, modaldata, setopenModal }) => {
+const ModalReq = ({ openModal, modaldata, setOpenModal }) => {
   const inputPhone = useRef(null);
 
   const [name, setName] = useState("");
@@ -41,7 +41,7 @@ const ModalReq = ({ openModal, modaldata, setopenModal }) => {
       setTimeout(() => {
         setSend(true);
         setOpen(false);
-        setopenModal(false);
+        setOpenModal(false);
         setConfirmLoading(false);
       }, 1500);
     } else {
@@ -59,7 +59,7 @@ const ModalReq = ({ openModal, modaldata, setopenModal }) => {
   }, [openModal]);
 
   const handleCancel = () => {
-    setopenModal(false);
+    setOpenModal(false);
     setOpen(false);
   };
 
@@ -80,21 +80,15 @@ const ModalReq = ({ openModal, modaldata, setopenModal }) => {
           <h3 className={s.title}>
             {send ? "Заявка отправлена ✅" : "Заявка"}
           </h3>
-          <div className={s.field}>
-            <label>Объект</label>
-            <input
-              className={s.input}
-              type="text"
-              defaultValue={modalText}
-              disabled
-            />
-          </div>
+          {send ? null : (
+            <p className={s.object_name}>по объекту {modalText}</p>
+          )}
           <div className={s.field}>
             <label>Ваше имя</label>
             <input
               disabled={send ? true : false}
               className={s.input}
-              placeholder={"Введи свое имя"}
+              placeholder={"Введите ваше имя"}
               type="text"
               value={name}
               onChange={onChangeName}

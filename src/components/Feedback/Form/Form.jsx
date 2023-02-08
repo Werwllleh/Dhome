@@ -2,9 +2,6 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import s from "../Form/Form.module.css";
 
-import iUser from "/images/icons/icon_user.png";
-import iEmail from "/images/icons/icon_email.png";
-
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -49,7 +46,7 @@ const Form = () => {
         </p>
         <label>Ваше имя</label>
         <div className={s.field}>
-          <Image src={iUser} alt="" />
+          <img src={"/images/icons/icon_user.png"} alt="" />
           <input
             className={s.input_user}
             placeholder={"Введи свое имя"}
@@ -61,7 +58,7 @@ const Form = () => {
         </div>
         <label>Ваша эл.почта</label>
         <div className={s.field}>
-          <Image src={iEmail} alt="" />
+          <img src={"/images/icons/icon_email.png"} alt="" />
           <div className={s.emailBlock}>
             <input
               className={s.input_email}
