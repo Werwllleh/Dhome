@@ -1,19 +1,19 @@
 export const menuItems = [
 	{
 		title: "О нас",
-		href: "#about",
+		href: "/#about",
 	},
 	{
 		title: "Преимущества",
-		href: "#advantages",
+		href: "/#advantages",
 	},
 	{
 		title: "Проекты",
-		href: "#projects",
+		href: "/#projects",
 	},
 	{
 		title: "Партнеры",
-		href: "#partners",
+		href: "/#partners",
 	},
 	{
 		title: "Контакты",

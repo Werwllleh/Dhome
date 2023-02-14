@@ -5,6 +5,7 @@ import { houses } from "./objects";
 
 import ModalReq from "../Modal/ModalReq";
 import MyPreview from "./MyPreview/MyPreview";
+import Link from "next/link";
 
 const settings = {
   className: "partner_item",
@@ -81,18 +82,6 @@ const Projects = () => {
     setmodaldata(data);
   };
 
-  /* for (const arr in houses) {
-    Object.values(houses[arr]).map((i) => {
-      console.log(Object.values(i)[1]);
-
-      let imagesOfHouse = Object.values(i)[7];
-
-      for (let i = 0; i < imagesOfHouse.length; i++) {
-        console.log(imagesOfHouse[i]);
-      }
-    });
-  } */
-
   return (
     <div className={s.projects} id="projects">
       <div className="container">
@@ -110,12 +99,12 @@ const Projects = () => {
               </p>
             </div>
             <div className={s.head_btns}>
-              <button
-                type="button"
+              <Link
+                href={"/objects"}
                 className={"btn" + " " + s.btn_all_projects}
               >
                 Все объекты
-              </button>
+              </Link>
               <div className={s.arrows}>
                 <button
                   className={s.arrow + " " + s.prev}
@@ -154,7 +143,11 @@ const Projects = () => {
             <Carousel ref={sliderRef} {...settings}>
               {houses.map((home, index) => (
                 <div key={index} className={s.project_slide}>
-                  <MyPreview img={home.imageSrc} imgArr={home.other} />
+                  <MyPreview
+                    img={home.imageSrc}
+                    title={home.title}
+                    imgArr={home.other}
+                  />
                   <div className={s.textBlock}>
                     <div>
                       <div className={s.home_title}>{home.title}</div>

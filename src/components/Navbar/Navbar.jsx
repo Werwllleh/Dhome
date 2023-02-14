@@ -5,7 +5,7 @@ import { menuItems } from "./NavItem/menuItems";
 import s from "../Navbar/Navbar.module.css";
 import NavItem from "./NavItem/NavItem";
 
-const Navbar = ({}) => {
+const Navbar = () => {
   const [headColor, setHeadColor] = useState(false);
   const [isActiveToggler, setIsActiveToggler] = useState(false);
 
