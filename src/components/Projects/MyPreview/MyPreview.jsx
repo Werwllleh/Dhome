@@ -30,8 +30,8 @@ const MyPreview = ({ img, title, imgArr }) => {
             onVisibleChange: (vis) => setVisible(vis),
           }}
         >
-          {imgArr?.map((i) => {
-            return <Image src={i} />;
+          {imgArr?.map((i, index) => {
+            return <Image key={index} src={i} />;
           })}
         </Image.PreviewGroup>
       </div>
