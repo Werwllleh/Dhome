@@ -58,7 +58,7 @@
 }
 
 .project_slide {
-  flex: 0 0 31%;
+  flex: 1 0 31%;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center;
@@ -158,11 +158,11 @@
     padding: 0.6rem;
   }
   .project_slide {
-    flex: 0 1 47%;
+    flex: 1 1 47%;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .showFilterBtn {
     display: block;
   }
