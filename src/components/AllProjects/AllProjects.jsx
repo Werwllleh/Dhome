@@ -1,16 +1,9 @@
-import React, {
-  useState,
-  useRef,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-} from "react";
+import React, { useState, useMemo, useContext, useEffect } from "react";
 import s from "../AllProjects/AllProjects.module.css";
 import { houses } from "../Projects/objects";
 
 import ModalReq from "../Modal/ModalReq";
 import MyPreview from "../Projects/MyPreview/MyPreview";
-import Link from "next/link";
 import Select from "../Select/Select";
 
 const AllProjects = () => {
@@ -18,6 +11,8 @@ const AllProjects = () => {
 
   const [openModal, setOpenModal] = useState(false);
   const [modaldata, setmodaldata] = useState("");
+
+  const [openFilter, setOpenFilter] = useState(false);
 
   const [filterData] = useMemo(() => {
     let filterdata = [...houses.filter((e) => e.place === place)];
@@ -45,22 +40,25 @@ const AllProjects = () => {
               </h1>
             </div>
           </div>
+          <button
+            className={"btn" + " " + s.showFilterBtn}
+            onClick={() => setOpenFilter(!openFilter)}
+          >
+            Фильтры
+          </button>
           <div className={s.projects_content}>
-            <div className={s.objects_filter}>
+            <div
+              className={
+                openFilter ? s.objects_filter + " " + s.open : s.objects_filter
+              }
+            >
               <div className={s.filter_body}>
+                <div className={s.filter_title}>Фильтры</div>
                 <div className={s.filter_select}>
                   <Select
-                    label={"Местоположение"}
-                    value={place}
-                    onChange={(value) => setPlace(value)}
-                    defaultValue="Кол-во элементов на странице"
-                    options={[
-                      ...new Set(
-                        houses.map((i) => {
-                          return i.place;
-                        })
-                      ),
-                    ]}
+                    options={[...new Set(houses.map((i) => i.place))]}
+                    selectPlace={setPlace}
+                    placeholder={"Местоположение"}
                   />
                 </div>
               </div>

@@ -5,7 +5,7 @@ export const houses = [
 		title: "Архангельское-1",
 		place: "г. Ульяновск",
 		price: 2500,
-		square: 300,
+		square: 330,
 		works: "фундамент, дом, крыша, окна, внешняя отделка, террасы.",
 		other: ["/images/projects/1/image1.jpeg", "/images/projects/2/image2.jpeg", "/images/projects/3/image3.jpeg", "/images/projects/4/image4.jpeg", "/images/projects/5/image5.jpeg", "/images/projects/6/image6.jpeg"]
 	},
@@ -15,7 +15,7 @@ export const houses = [
 		title: "Архангельское-2",
 		place: "г. Чебоксары",
 		price: 2500,
-		square: 300,
+		square: 480,
 		works: "фундамент, дом, крыша, окна, внешняя отделка, террасы.",
 		other: ["/images/projects/1/image1.jpeg", "/images/projects/2/image2.jpeg", "/images/projects/3/image3.jpeg", "/images/projects/4/image4.jpeg", "/images/projects/5/image5.jpeg", "/images/projects/6/image6.jpeg"]
 	},
@@ -25,7 +25,7 @@ export const houses = [
 		title: "Архангельское-3",
 		place: "г. Казань",
 		price: 2500,
-		square: 300,
+		square: 500,
 		works: "фундамент, дом, крыша, окна, внешняя отделка, террасы.",
 		other: ["/images/projects/1/image1.jpeg", "/images/projects/2/image2.jpeg", "/images/projects/3/image3.jpeg", "/images/projects/4/image4.jpeg", "/images/projects/5/image5.jpeg", "/images/projects/6/image6.jpeg"]
 	},
@@ -45,7 +45,7 @@ export const houses = [
 		title: "Архангельское-5",
 		place: "г. Ульяновск",
 		price: 2500,
-		square: 300,
+		square: 550,
 		works: "фундамент, дом, крыша, окна, внешняя отделка, террасы.",
 		other: ["/images/projects/1/image1.jpeg", "/images/projects/2/image2.jpeg", "/images/projects/3/image3.jpeg", "/images/projects/4/image4.jpeg", "/images/projects/5/image5.jpeg", "/images/projects/6/image6.jpeg"]
 	},
@@ -55,7 +55,7 @@ export const houses = [
 		title: "Архангельское-6",
 		place: "г. Чебоксары",
 		price: 2500,
-		square: 300,
+		square: 320,
 		works: "фундамент, дом, крыша, окна, внешняя отделка, террасы.",
 		other: ["/images/projects/1/image1.jpeg", "/images/projects/2/image2.jpeg", "/images/projects/3/image3.jpeg", "/images/projects/4/image4.jpeg", "/images/projects/5/image5.jpeg", "/images/projects/6/image6.jpeg"]
 	},
@@ -65,7 +65,7 @@ export const houses = [
 		title: "Архангельское-7",
 		place: "г. Казань",
 		price: 2500,
-		square: 300,
+		square: 390,
 		works: "фундамент, дом, крыша, окна, внешняя отделка, террасы.",
 		other: ["/images/projects/1/image1.jpeg", "/images/projects/2/image2.jpeg", "/images/projects/3/image3.jpeg", "/images/projects/4/image4.jpeg", "/images/projects/5/image5.jpeg", "/images/projects/6/image6.jpeg"]
 	},

@@ -1,28 +1,51 @@
-import React, { useState } from "react";
-import s from "../Select/Select.module.css";
+import React, { useState, useRef } from "react";
+import useOnClickOutside from "../../hooks/useOnClickOutside";
 
-const Select = ({ options, defaultValue, value, onChange, label }) => {
-  const [active, setActive] = useState(false);
+import s from "../Select/Select.module.css";
+import Option from "./Option";
+
+export const Select = ({ options, defaultValue, placeholder, selectPlace }) => {
+  const [selectedOption, setSelectedOption] = useState(defaultValue || "");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const showDropdownHandler = () => setShowDropdown(!showDropdown);
+  const selectPlaceholder = placeholder || "Choose an option";
+  const selectContainerRef = useRef(null);
+
+  const clickOutsideHandler = () => setShowDropdown(false);
+
+  useOnClickOutside(selectContainerRef, clickOutsideHandler);
+
+  const updateSelectedOption = (option) => {
+    selectPlace(option);
+    setSelectedOption(option);
+    setShowDropdown(false);
+  };
 
   return (
-    <div className={s.filter}>
-      <div onClick={() => setActive(!active)} className={s.filter_label}>
-        {label}
-      </div>
-      <select
-        className={active ? s.filter_choice + " " + s.active : s.filter_choice}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
+    <div className={s.select_container} ref={selectContainerRef}>
+      <div
+        className={
+          showDropdown ? s.selected_text + " " + s.active : s.selected_text
+        }
+        onClick={showDropdownHandler}
       >
-        <option disabled value="value1">
-          {defaultValue}
-        </option>
+        {selectedOption.length > 0 ? selectedOption : selectPlaceholder}
+      </div>
+      <ul
+        className={
+          showDropdown
+            ? s.select_options + " " + s.show_dropdown_options
+            : s.select_options + " " + s.hide_dropdown_options
+        }
+      >
         {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
+          <Option
+            change={updateSelectedOption}
+            key={option}
+            value={option}
+          ></Option>
         ))}
-      </select>
+      </ul>
     </div>
   );
 };
