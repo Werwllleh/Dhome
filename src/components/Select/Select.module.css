@@ -1,13 +1,13 @@
 .select_container {
   display: inline-block;
   position: relative;
-  width: 250px;
   background-color: #ffc94b;
   border-radius: 5px;
 }
 
 .selected_text {
-  padding: 10px 20px;
+  width: 250px;
+  padding: 0.6rem;
   cursor: pointer;
 }
 
@@ -15,7 +15,7 @@
   content: "";
   position: absolute;
   right: 10px;
-  top: 20px;
+  top: 50%;
   border: 7px solid transparent;
   border-color: #132026 transparent transparent transparent;
 }
@@ -24,7 +24,7 @@
   overflow: hidden;
   position: absolute;
   margin-top: 0.5rem;
-  width: 100%;
+  width: 250px;
   border: 1px solid #e4e4e4;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -50,6 +50,7 @@
 }
 
 .show_dropdown_options {
+  z-index: 99;
   transform: scaleY(1);
   -webkit-transform: scaleY(1);
   -moz-transform: scaleY(1);

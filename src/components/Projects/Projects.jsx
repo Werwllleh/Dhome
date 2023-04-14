@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import s from "../Projects/Projects.module.css";
 import { Carousel, Image } from "antd";
-import { houses } from "./objects";
+import { houses } from "../../utils/objects";
 
 import ModalReq from "../Modal/ModalReq";
 import MyPreview from "./MyPreview/MyPreview";
@@ -89,7 +89,7 @@ const Projects = () => {
           <div className={s.head}>
             <div className={s.head_text}>
               <h2>
-                Самые популярные <span>объекты</span>
+                Готовые <span>объекты</span>
               </h2>
               <p>
                 Мы можем адаптировать под SIP - технологию любой проект. Вы

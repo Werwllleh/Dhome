@@ -1,10 +1,12 @@
-import React, { useState, useRef } from "react";
+import React, {useState, useRef} from "react";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 
 import s from "../Select/Select.module.css";
 import Option from "./Option";
 
-export const Select = ({ options, defaultValue, placeholder, selectPlace }) => {
+
+export const Select = ({options, defaultValue, placeholder, selectPlace, reset, changeReset}) => {
+
   const [selectedOption, setSelectedOption] = useState(defaultValue || "");
   const [showDropdown, setShowDropdown] = useState(false);
   const showDropdownHandler = () => setShowDropdown(!showDropdown);
@@ -16,6 +18,7 @@ export const Select = ({ options, defaultValue, placeholder, selectPlace }) => {
   useOnClickOutside(selectContainerRef, clickOutsideHandler);
 
   const updateSelectedOption = (option) => {
+    changeReset(true)
     selectPlace(option);
     setSelectedOption(option);
     setShowDropdown(false);
@@ -24,12 +27,10 @@ export const Select = ({ options, defaultValue, placeholder, selectPlace }) => {
   return (
     <div className={s.select_container} ref={selectContainerRef}>
       <div
-        className={
-          showDropdown ? s.selected_text + " " + s.active : s.selected_text
-        }
+        className={s.selected_text}
         onClick={showDropdownHandler}
       >
-        {selectedOption.length > 0 ? selectedOption : selectPlaceholder}
+        {reset ? selectedOption : selectPlaceholder}
       </div>
       <ul
         className={
@@ -38,7 +39,7 @@ export const Select = ({ options, defaultValue, placeholder, selectPlace }) => {
             : s.select_options + " " + s.hide_dropdown_options
         }
       >
-        {options.map((option) => (
+        {options?.map((option) => (
           <Option
             change={updateSelectedOption}
             key={option}

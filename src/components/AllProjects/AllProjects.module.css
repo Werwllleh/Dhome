@@ -1,6 +1,9 @@
+.head_text {
+  margin: 0 0 50px 0;
+}
 .projects {
   background-color: #ffffff;
-  padding: 100px 0 50px 0;
+  padding: 150px 0 100px 0;
 }
 
 .projects_content {
@@ -12,6 +15,7 @@
 .objects_filter {
   flex: 0 0 300px;
   margin: 0 1rem 0 0;
+  min-height: 417px;
 }
 
 .filter_body {
@@ -48,12 +52,32 @@
 }
 
 .filter_select {
-  /* position: fixed; */
+  width: 250px;
+  background-color: #ffc94b;
+  border-radius: 5px;
+}
+
+.filter_padding {
+  padding: 0.6rem;
+}
+
+.filter_reset_btn {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  padding: 0.6rem;
+  background: #132026;
+  color: #fff;
+}
+
+.filter_select:not(:last-child) {
+  margin: 0 0 10px 0;
 }
 
 .project_slider {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -62,8 +86,7 @@
   display: flex !important;
   flex-direction: column !important;
   justify-content: center;
-  margin: 0.5rem;
-  max-width: 340px;
+  max-width: 317px;
   border-radius: 20px;
   overflow: hidden;
   -webkit-border-radius: 20px;
@@ -81,7 +104,7 @@
 .textBlock {
   display: flex;
   justify-content: space-between;
-  padding: 0.6rem;
+  padding: 1rem;
   background-color: #ececec;
 }
 
@@ -117,7 +140,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0.6rem;
+  padding: 1rem;
   background-color: #132026;
 }
 
@@ -130,7 +153,6 @@
 .home_buy_btn {
   background-color: #ffc94b;
   color: inherit;
-  padding: 15px 20px;
   border-radius: 5px;
   font-weight: 600;
 }
@@ -141,9 +163,6 @@
   }
   .home_price {
     font-size: 14px;
-  }
-  .home_buy_btn {
-    padding: 7px 10px;
   }
 }
 
@@ -186,6 +205,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .head_text {
+    text-align: center;
+  }
   .project_slide {
     flex: 1 1 100%;
   }

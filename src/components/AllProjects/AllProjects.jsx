@@ -1,33 +1,63 @@
-import React, { useState, useMemo, useContext, useEffect } from "react";
+import React, {useState, useMemo} from "react";
 import s from "../AllProjects/AllProjects.module.css";
-import { houses } from "../Projects/objects";
+import {houses} from "../../utils/objects";
 
 import ModalReq from "../Modal/ModalReq";
 import MyPreview from "../Projects/MyPreview/MyPreview";
 import Select from "../Select/Select";
+import {Slider} from "antd";
 
 const AllProjects = () => {
-  const [place, setPlace] = useState("");
+
+  let minSquare = Math.min(...houses.map((i) => i.square));
+  let maxSquare = Math.max(...houses.map((i) => i.square));
+
+  const [place, setPlace] = useState(null);
+  const [square, setSquare] = useState([minSquare, maxSquare]);
+
+  const [clearPlace, setClearPlace] = useState(false);
 
   const [openModal, setOpenModal] = useState(false);
-  const [modaldata, setmodaldata] = useState("");
+  const [modalData, setModalData] = useState("");
 
-  const [openFilter, setOpenFilter] = useState(false);
+  const [filterData] = React.useMemo(() => {
+    return [houses.filter(
+      (house) => (!place || house.place === place) && (!square || (house.square >= square[0] && house.square <= square[1]))
+    )];
+  }, [houses, place, square]);
 
-  const [filterData] = useMemo(() => {
-    let filterdata = [...houses.filter((e) => e.place === place)];
-
-    if (filterdata.length) {
-      return [filterdata];
-    } else {
-      return [houses];
-    }
-  }, [houses, place]);
+  /*const [filterData] = useMemo(() => {
+    let filterData = [...houses.filter((e) => {
+      if (place && !square) {
+        return e.place === place
+      }
+      if (!place && square) {
+        return e.square >= square[0] && e.square <= square[1]
+      }
+      if (place && square) {
+        return e.place === place && e.square >= square[0] && e.square <= square[1]
+      }
+      if (!place && !square) {
+        return [houses]
+      }
+    })]
+    return [filterData];
+  }, [houses, place, square]);*/
 
   const om = (data) => {
     setOpenModal(!openModal);
-    setmodaldata(data);
+    setModalData(data);
   };
+
+  const changeSlider = (e) => {
+    setSquare(e)
+  }
+
+  const resetFilter = () => {
+    setClearPlace(false)
+    setPlace(null);
+    changeSlider([minSquare, maxSquare])
+  }
 
   return (
     <div className={s.projects}>
@@ -36,31 +66,40 @@ const AllProjects = () => {
           <div className={s.head}>
             <div className={s.head_text}>
               <h1>
-                Наши <span>объекты</span>
+                Готовые <span>объекты</span>
               </h1>
             </div>
           </div>
-          <button
-            className={"btn" + " " + s.showFilterBtn}
-            onClick={() => setOpenFilter(!openFilter)}
-          >
-            Фильтры
-          </button>
           <div className={s.projects_content}>
-            <div
-              className={
-                openFilter ? s.objects_filter + " " + s.open : s.objects_filter
-              }
-            >
+            <div className={s.objects_filter}>
               <div className={s.filter_body}>
                 <div className={s.filter_title}>Фильтры</div>
                 <div className={s.filter_select}>
                   <Select
+                    changeReset={setClearPlace}
+                    reset={clearPlace}
                     options={[...new Set(houses.map((i) => i.place))]}
                     selectPlace={setPlace}
                     placeholder={"Местоположение"}
                   />
                 </div>
+                <div className={s.filter_select}>
+                  <div className={s.filter_padding}>
+                    <p>Площадь</p>
+                    <Slider
+                      trackStyle={{backgroundColor: '#fff'}}
+                      railStyle={{backgroundColor: "#ffb100"}}
+                      range={{draggableTrack: true}}
+                      onChange={changeSlider}
+                      step={10}
+                      min={minSquare}
+                      max={maxSquare}
+                      defaultValue={square}
+                      value={square}
+                    />
+                  </div>
+                </div>
+                <button onClick={resetFilter} className={s.filter_reset_btn}>Сброс фильтра</button>
               </div>
             </div>
             <div className={s.project_slider}>
@@ -111,7 +150,7 @@ const AllProjects = () => {
       <ModalReq
         openModal={openModal}
         setOpenModal={setOpenModal}
-        modaldata={modaldata}
+        modaldata={modalData}
       />
     </div>
   );

@@ -40,11 +40,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={headColor ? s.fixed_nav + " " + s.active : s.fixed_nav}>
+    <div className={s.fixed_nav + " " + s.active}>
       <nav className={s.navbar}>
         <div className="container">
           <div className={s.navbar_body}>
-            <Link href="#" className={s.navbar_logo}>
+            <Link href="/" className={s.navbar_logo}>
               <span
                 className={
                   headColor
@@ -89,11 +89,7 @@ const Navbar = () => {
             </div>
             <div className={s.navbar_links}>
               <Link href="#!">
-                <span
-                  className={
-                    headColor ? s.link_icon + " " + s.active : s.link_icon
-                  }
-                >
+                <span className={s.link_icon + " " + s.active}>
                   <svg
                     width="24"
                     height="24"
@@ -110,11 +106,7 @@ const Navbar = () => {
                 </span>
               </Link>
               <Link href="#!">
-                <span
-                  className={
-                    headColor ? s.link_icon + " " + s.active : s.link_icon
-                  }
-                >
+                <span className={s.link_icon + " " + s.active}>
                   <svg
                     width="24"
                     height="24"
